@@ -1,0 +1,96 @@
+---
+import Button from './Button.astro';
+import { Image } from 'astro:assets';
+import bgImage from '../assets/bg1.png';
+---
+
+<section
+	class='relative min-h-[90svh] flex items-center justify-center pt-14 overflow-hidden bg-bg-banner hero'
+>
+	<!-- <div class='absolute pointer-events-none'>
+		<div class='absolute'></div>
+	</div> -->
+
+	<!-- logo prompt 
+	logo image for a comunications company named Tauro Comunicação, has to be colors like #A056F0 and #0A0640 
+	-->
+
+	<div class='container mx-auto px-6 relative z-10'>
+		<div class='grid md:grid-cols-2 gap-12 items-center'>
+			<!-- Content -->
+			<div class='space-y-8 animate-slide-up'>
+				<h1 class='text-5xl md:text-7xl font-bold leading-tight'>
+					<span
+						class='relative bg-clip-text drop-shadow-[0_0_10px_rgba(86,194,240,1)]'
+						>Conecte.</span
+					>
+					&nbsp;Engaje. Venda.
+				</h1>
+
+				<h2 class='text-xl md:text-2xl text-white/90 leading-relaxed'>
+					Sua comunicação em massa,<br />
+					<span class='text-primary-cyan font-semibold'
+						>inteligente e instantânea.</span
+					>
+				</h2>
+
+				<div class='flex flex-wrap gap-4 pt-4'>
+					<Button href='#solucoes'> Descubra nossas soluções </Button>
+				</div>
+
+				<!-- Stats -->
+				<!-- <div class='grid grid-cols-3 gap-6 pt-8'>
+					<div class='text-center'>
+						<div class='text-3xl font-bold text-primary-cyan'>
+							99%
+						</div>
+						<div class='text-sm text-white/70'>Taxa de Entrega</div>
+					</div>
+					<div class='text-center'>
+						<div class='text-3xl font-bold text-primary-cyan'>
+							24/7
+						</div>
+						<div class='text-sm text-white/70'>Suporte</div>
+					</div>
+					<div class='text-center'>
+						<div class='text-3xl font-bold text-primary-cyan'>
+							5min
+						</div>
+						<div class='text-sm text-white/70'>Ativação</div>
+					</div>
+				</div> -->
+			</div>
+
+			<!-- Image Placeholder -->
+			<div class='relative animate-float block md:hidden'>
+				<div
+					class='aspect-square rounded-3xl backdrop-blur-sm flex items-center justify-center'
+				>
+					<div class='text-center p-8'>
+						<Image
+							src={bgImage}
+							alt='Banner Image'
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scroll Indicator -->
+	<div class='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce'>
+		<svg
+			class='w-6 h-6 text-white/50'
+			fill='none'
+			stroke='currentColor'
+			viewBox='0 0 24 24'
+		>
+			<path
+				stroke-linecap='round'
+				stroke-linejoin='round'
+				stroke-width='2'
+				d='M19 14l-7 7m0 0l-7-7m7 7V3'
+			></path>
+		</svg>
+	</div>
+</section>

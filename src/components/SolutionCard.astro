@@ -1,0 +1,76 @@
+---
+import type { ImageMetadata } from 'astro';
+import Button from './Button.astro';
+
+interface Props {
+	icon: string;
+	title: string;
+	description: string;
+	features: string[];
+	gradient: string;
+}
+
+const { icon, title, description, features, gradient } = Astro.props;
+---
+
+<div
+	class='group relative bg-black/40 backdrop-blur-sm rounded-2xl p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary-cyan/20'
+>
+	<!-- Hover Effect sutil -->
+	<div
+		class='absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-primary-cyan/10 via-primary-blue/10 to-primary-purple/10'
+	>
+	</div>
+
+	<div class='relative z-10'>
+		<!-- Icon -->
+		<div
+			class={`w-16 h-16 ${gradient} rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}
+		>
+			<img
+				src={icon}
+				alt="description''"
+			/>
+		</div>
+
+		<!-- Title & Description -->
+		<h3
+			class='text-2xl font-bold mb-3 text-white group-hover:text-primary-cyan transition-colors duration-300'
+		>
+			{title}
+		</h3>
+		<p class='text-white/70 mb-6 leading-relaxed'>
+			{description}
+		</p>
+
+		<!-- Features List -->
+		<ul class='space-y-3'>
+			{
+				features.map((feature) => (
+					<li class='flex items-start gap-3 text-white/80'>
+						<svg
+							class='w-5 h-5 text-primary-cyan flex-shrink-0 mt-0.5'
+							fill='currentColor'
+							viewBox='0 0 20 20'
+						>
+							<path
+								fill-rule='evenodd'
+								d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z'
+								clip-rule='evenodd'
+							/>
+						</svg>
+						<span class='text-sm leading-relaxed'>{feature}</span>
+					</li>
+				))
+			}
+		</ul>
+
+		<!-- CTA -->
+		<Button
+			variant='primary'
+			class='mt-8 w-full py-3 px-6 text-center rounded-lg font-semibold text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:shadow-lg hover:shadow-[#522b7c]/40 cursor-pointer'
+		>
+			Saiba Mais
+		</Button>
+	</div>
+</div>

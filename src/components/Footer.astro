@@ -1,0 +1,184 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = {
+	produtos: [
+		{ name: 'WhatsApp', href: '#whatsapp' },
+		{ name: 'SMS Marketing', href: '#sms' },
+	],
+	empresa: [{ name: 'Sobre Nós', href: '#sobre' }],
+	suporte: [{ name: 'Contato', href: '#contato' }],
+	legal: [
+		{ name: 'Termos de Uso', href: '#termos' },
+	],
+};
+
+const socialLinks = [
+	{ name: 'LinkedIn', icon: 'in', href: '#', color: 'hover:text-blue-400' },
+	// { name: 'Instagram', icon: '📷', href: '#', color: 'hover:text-pink-400' },
+	// { name: 'Facebook', icon: 'f', href: '#', color: 'hover:text-blue-500' },
+	// { name: 'YouTube', icon: '▶', href: '#', color: 'hover:text-red-500' },
+];
+---
+
+<footer
+	id='contato'
+	class='relative bg-black/70 backdrop-blur-sm'
+>
+	<div class='container mx-auto px-6 py-16'>
+		<!-- Main Footer Content -->
+		<div
+			class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12'
+		>
+			<!-- Brand Column -->
+			<div class='lg:col-span-2'>
+				<a
+					href='/'
+					class='flex items-center gap-3 mb-6 group'
+				>
+					<div
+						class='w-12 h-12 bg-gradient-to-br from-primary-cyan to-primary-blue rounded-full flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110'
+					>
+						🐂
+					</div>
+					<span
+						class='text-2xl font-bold bg-gradient-to-r from-primary-cyan to-white bg-clip-text text-transparent'
+					>
+						TAURO
+					</span>
+				</a>
+				<p class='text-white/70 mb-6 leading-relaxed'>
+					Conectamos você ao mundo digital através de soluções
+					inteligentes de comunicação em massa.
+				</p>
+
+				<!-- Social Links -->
+				<div class='flex gap-4'>
+					{
+						socialLinks.map((social) => (
+							<a
+								href={social.href}
+								aria-label={social.name}
+								class={`w-10 h-10 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 hover:bg-black/70 ${social.color}`}
+							>
+								<span class='text-sm font-bold'>
+									{social.icon}
+								</span>
+							</a>
+						))
+					}
+				</div>
+			</div>
+
+			<!-- Links Columns -->
+			<div>
+				<h4 class='text-white font-semibold mb-4 text-lg'>Produtos</h4>
+				<ul class='space-y-3'>
+					{
+						footerLinks.produtos.map((link) => (
+							<li>
+								<a
+									href={link.href}
+									class='text-white/70 hover:text-primary-cyan transition-colors duration-300'
+								>
+									{link.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div>
+				<h4 class='text-white font-semibold mb-4 text-lg'>Empresa</h4>
+				<ul class='space-y-3'>
+					{
+						footerLinks.empresa.map((link) => (
+							<li>
+								<a
+									href={link.href}
+									class='text-white/70 hover:text-primary-cyan transition-colors duration-300'
+								>
+									{link.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div>
+				<h4 class='text-white font-semibold mb-4 text-lg'>Suporte</h4>
+				<ul class='space-y-3'>
+					{
+						footerLinks.suporte.map((link) => (
+							<li>
+								<a
+									href={link.href}
+									class='text-white/70 hover:text-primary-cyan transition-colors duration-300'
+								>
+									{link.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+
+			<div>
+				<h4 class='text-white font-semibold mb-4 text-lg'>Legal</h4>
+				<ul class='space-y-3'>
+					{
+						footerLinks.legal.map((link) => (
+							<li>
+								<a
+									href={link.href}
+									class='text-white/70 hover:text-primary-cyan transition-colors duration-300'
+								>
+									{link.name}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
+		</div>
+
+		<!-- Newsletter Section -->
+		<!-- <div class='pt-12 mb-12'>
+			<div class='max-w-2xl mx-auto text-center'>
+				<h4 class='text-2xl font-bold mb-3 text-white'>
+					Fique por dentro
+				</h4>
+				<p class='text-white/70 mb-6'>
+					Receba dicas e novidades sobre comunicação digital
+				</p>
+				<form class='flex flex-col sm:flex-row gap-3 max-w-md mx-auto'>
+					<input
+						type='email'
+						placeholder='seu@email.com'
+						class='flex-1 px-6 py-3 bg-black/50 backdrop-blur-sm rounded-full text-white placeholder-white/50 focus:outline-none focus:ring-1 focus:ring-primary-cyan/40 transition-colors duration-300'
+					/>
+					<button
+						type='submit'
+						class='px-8 py-3 bg-gradient-to-r from-primary-cyan to-primary-blue rounded-full font-semibold text-white shadow-lg shadow-primary-cyan/40 hover:shadow-primary-cyan/60 transition-all duration-300 hover:scale-105'
+					>
+						Assinar
+					</button>
+				</form>
+			</div>
+		</div> -->
+
+		<!-- Bottom Bar -->
+		<div class='pt-8'>
+			<div
+				class='flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/60'
+			>
+				<p>
+					© {currentYear} Tauro Comunicação. Todos os direitos reservados.
+				</p>
+				<p class="text-[12px]">Desenvolvido com 💙 por Fabrício Bahiense</p>
+			</div>
+		</div>
+	</div>
+</footer>

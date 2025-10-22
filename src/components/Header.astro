@@ -1,0 +1,71 @@
+---
+import Button from './Button.astro';
+---
+
+<header
+	class='fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm'
+>
+	<nav class='container mx-auto px-5 py-3'>
+		<div class='flex items-center justify-around gap-4'>
+			<!-- Logo -->
+			<a href='/' class='flex items-center gap-2 group'>
+				<div class='w-10 h-10 bg-gradient-to-br from-primary-cyan via-primary-blue to-primary-purple rounded-full flex items-center justify-center text-xl transition-transform duration-300 group-hover:scale-110'>🐂</div>
+				<span class='text-xl font-bold bg-gradient-to-r from-primary-cyan via-primary-blue to-primary-purple bg-clip-text text-transparent'>TAURO</span>
+			</a>
+
+			<!-- Navigation -->
+			<ul class='hidden md:flex items-center gap-6'>
+				<li>
+					<a
+						href='#whatsapp'
+						class='text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group'
+					>
+						WhatsApp
+						<span class='absolute bottom-0 left-0 w-0 h-0.5 bg-primary-cyan transition-all duration-300 group-hover:w-full'></span>
+					</a>
+				</li>
+				<li>
+					<a
+						href='#sms'
+						class='text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group'
+					>
+						SMS
+						<span class='absolute bottom-0 left-0 w-0 h-0.5 bg-primary-cyan transition-all duration-300 group-hover:w-full'></span>
+					</a>
+				</li>
+				<li>
+					<a
+						href='#solucoes'
+						class='text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group'
+					>
+						Soluções
+						<span class='absolute bottom-0 left-0 w-0 h-0.5 bg-primary-cyan transition-all duration-300 group-hover:w-full'></span>
+					</a>
+				</li>
+				<!-- CTA Button -->
+				<Button href='#contato'> Fale Conosco </Button>
+			</ul>
+
+
+			<!-- Mobile Menu Button -->
+			<button
+				class='md:hidden text-white'
+				aria-label='Menu'
+			>
+				<svg
+					class='w-6 h-6'
+					fill='none'
+					stroke='currentColor'
+					viewBox='0 0 24 24'
+				>
+					<path
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						stroke-width='2'
+						d='M4 6h16M4 12h16M4 18h16'
+					></path>
+				</svg>
+			</button>
+		</div>
+	</nav>
+</header>

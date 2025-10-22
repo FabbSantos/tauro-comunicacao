@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+* { 
+    font-family: inherit;
+}
+.hero {
+    background-size: 100% 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-image: url('../assets/bg-banner.jpg');
+}
