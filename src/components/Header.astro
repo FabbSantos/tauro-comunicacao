@@ -2,9 +2,17 @@
 import Button from './Button.astro';
 import { Image } from 'astro:assets';
 import logo from '../assets/logo_tauro.png';
+
+const currentPath = Astro.url.pathname;
+const navLinks = [
+	{ href: '/whatsapp', label: 'WhatsApp', page: true },
+	{ href: '/sms', label: 'SMS', page: true },
+	{ href: '/#solucoes', label: 'Soluções', page: false },
+];
 ---
 
 <header
+	transition:persist
 	class='fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm'
 >
 	<nav class='container mx-auto px-5 py-3'>
@@ -20,37 +28,26 @@ import logo from '../assets/logo_tauro.png';
 
 			<!-- Navigation -->
 			<ul class='hidden md:flex items-center gap-6'>
-				<li>
-					<a
-						href='#whatsapp'
-						class='text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group'
-					>
-						WhatsApp
-						<span class='absolute bottom-0 left-0 w-0 h-0.5 bg-primary-cyan transition-all duration-300 group-hover:w-full'></span>
-					</a>
-				</li>
-				<li>
-					<a
-						href='#sms'
-						class='text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group'
-					>
-						SMS
-						<span class='absolute bottom-0 left-0 w-0 h-0.5 bg-primary-cyan transition-all duration-300 group-hover:w-full'></span>
-					</a>
-				</li>
-				<li>
-					<a
-						href='#solucoes'
-						class='text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group'
-					>
-						Soluções
-						<span class='absolute bottom-0 left-0 w-0 h-0.5 bg-primary-cyan transition-all duration-300 group-hover:w-full'></span>
-					</a>
-				</li>
+				{navLinks.map(link => (
+					<li>
+						<a
+							href={link.href}
+							class={`text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group ${
+								link.page && currentPath === link.href ? 'text-primary-cyan' : ''
+							}`}
+						>
+							{link.label}
+							<span
+								class={`absolute bottom-0 left-0 h-0.5 bg-primary-cyan transition-all duration-300 ${
+									link.page && currentPath === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+								}`}
+							></span>
+						</a>
+					</li>
+				))}
 				<!-- CTA Button -->
 				<Button href='#contato'> Fale Conosco </Button>
 			</ul>
-
 
 			<!-- Mobile Menu Button -->
 			<!-- <button

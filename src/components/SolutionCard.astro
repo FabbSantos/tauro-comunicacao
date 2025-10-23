@@ -5,12 +5,13 @@ import Button from './Button.astro';
 interface Props {
 	icon: string;
 	title: string;
+	href: string;
 	description: string;
 	features: string[];
 	gradient: string;
 }
 
-const { icon, title, description, features, gradient } = Astro.props;
+const { icon, title, description, features, gradient, href } = Astro.props;
 ---
 
 <div
@@ -69,6 +70,7 @@ const { icon, title, description, features, gradient } = Astro.props;
 		<Button
 			variant='primary'
 			class='mt-8 w-full py-3 px-6 text-center rounded-lg font-semibold text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:shadow-lg hover:shadow-[#522b7c]/40 cursor-pointer'
+			href={href}
 		>
 			Saiba Mais
 		</Button>

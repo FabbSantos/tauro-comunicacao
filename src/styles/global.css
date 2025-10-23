@@ -3,13 +3,33 @@
 * { 
     font-family: inherit;
     scroll-behavior: smooth;
+    scroll-margin: 350px;
 }
+button[type="submit"] {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
-    
     .hero {
         background-size: 100% 100%;
         background-position: right;
         background-repeat: no-repeat;
         background-image: url('../assets/bg-banner.jpg');
     }
+}
+
+@keyframes vt-fade-in {
+  from { opacity:0; transform:translateY(4px) scale(.98); }
+  to { opacity:1; transform:translateY(0) scale(1); }
+}
+@keyframes vt-fade-out {
+  from { opacity:1; transform:translateY(0) scale(1); }
+  to { opacity:0; transform:translateY(-4px) scale(.98); }
+}
+
+::view-transition-new(root) {
+  animation: vt-fade-in .35s ease;
+}
+::view-transition-old(root) {
+  animation: vt-fade-out .25s ease;
 }

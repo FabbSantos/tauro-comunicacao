@@ -5,8 +5,8 @@ import { Image } from 'astro:assets';
 
 const footerLinks = {
 	produtos: [
-		{ name: 'WhatsApp', href: '#whatsapp' },
-		{ name: 'SMS Marketing', href: '#sms' },
+		{ name: 'WhatsApp', href: '/whatsapp' },
+		{ name: 'SMS Marketing', href: '/sms' },
 	],
 	empresa: [{ name: 'Sobre Nós', href: '#sobre' }],
 	suporte: [{ name: 'Contato', href: '#contato' }],
@@ -14,14 +14,12 @@ const footerLinks = {
 };
 
 const socialLinks = [
-	{ name: 'LinkedIn', icon: 'in', href: '#', color: 'hover:text-[#A056F0]' },
-	// { name: 'Instagram', icon: '📷', href: '#', color: 'hover:text-pink-400' },
-	// { name: 'Facebook', icon: 'f', href: '#', color: 'hover:text-blue-500' },
-	// { name: 'YouTube', icon: '▶', href: '#', color: 'hover:text-red-500' },
+	{ name: 'LinkedIn', icon: 'in', href: '#', color: 'hover:text-[#A056F0]' }
 ];
 ---
 
 <footer
+	transition:persist
 	class='relative text-center md:text-left bg-gradient-to-br from-[#1e144b] to-[#060428] backdrop-blur-sm'
 >
 	<div class='container mx-auto px-6 py-16'>
