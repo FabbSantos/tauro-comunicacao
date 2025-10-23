@@ -26,7 +26,7 @@ const { icon, title, description, features, gradient, href } = Astro.props;
 	<div class='relative z-10'>
 		<!-- Icon -->
 		<div
-			class={`w-16 h-16 ${gradient} rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}
+			class={`w-16 h-16 ${gradient} mx-auto md:mx-0 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}
 		>
 			<img
 				src={icon}
@@ -36,7 +36,7 @@ const { icon, title, description, features, gradient, href } = Astro.props;
 
 		<!-- Title & Description -->
 		<h3
-			class='text-2xl font-bold mb-3 text-white group-hover:text-primary-cyan transition-colors duration-300'
+			class='text-xl md:text-2xl font-bold mb-3 text-white group-hover:text-primary-cyan transition-colors duration-300 text-center md:text-left'
 		>
 			{title}
 		</h3>
