@@ -1,5 +1,7 @@
 ---
 const currentYear = new Date().getFullYear();
+import logo from '../assets/logo_tauro.png';
+import { Image } from 'astro:assets';
 
 const footerLinks = {
 	produtos: [
@@ -8,13 +10,11 @@ const footerLinks = {
 	],
 	empresa: [{ name: 'Sobre Nós', href: '#sobre' }],
 	suporte: [{ name: 'Contato', href: '#contato' }],
-	legal: [
-		{ name: 'Termos de Uso', href: '#termos' },
-	],
+	legal: [{ name: 'Termos de Uso', href: '#termos' }],
 };
 
 const socialLinks = [
-	{ name: 'LinkedIn', icon: 'in', href: '#', color: 'hover:text-blue-400' },
+	{ name: 'LinkedIn', icon: 'in', href: '#', color: 'hover:text-[#A056F0]' },
 	// { name: 'Instagram', icon: '📷', href: '#', color: 'hover:text-pink-400' },
 	// { name: 'Facebook', icon: 'f', href: '#', color: 'hover:text-blue-500' },
 	// { name: 'YouTube', icon: '▶', href: '#', color: 'hover:text-red-500' },
@@ -22,8 +22,7 @@ const socialLinks = [
 ---
 
 <footer
-	id='contato'
-	class='relative bg-black/70 backdrop-blur-sm'
+	class='relative text-center md:text-left bg-gradient-to-br from-[#1e144b] to-[#060428] backdrop-blur-sm'
 >
 	<div class='container mx-auto px-6 py-16'>
 		<!-- Main Footer Content -->
@@ -34,18 +33,13 @@ const socialLinks = [
 			<div class='lg:col-span-2'>
 				<a
 					href='/'
-					class='flex items-center gap-3 mb-6 group'
+					class='flex items-center gap-2 group'
 				>
-					<div
-						class='w-12 h-12 bg-gradient-to-br from-primary-cyan to-primary-blue rounded-full flex items-center justify-center text-2xl transition-transform duration-300 group-hover:scale-110'
-					>
-						🐂
-					</div>
-					<span
-						class='text-2xl font-bold bg-gradient-to-r from-primary-cyan to-white bg-clip-text text-transparent'
-					>
-						TAURO
-					</span>
+					<Image
+						src={logo}
+						alt='Logo Tauro'
+						class='max-w-[120px] hover:scale-110 transition-transform duration-300 mx-auto md:ml-0 pb-10'
+					/>
 				</a>
 				<p class='text-white/70 mb-6 leading-relaxed'>
 					Conectamos você ao mundo digital através de soluções
@@ -177,7 +171,9 @@ const socialLinks = [
 				<p>
 					© {currentYear} Tauro Comunicação. Todos os direitos reservados.
 				</p>
-				<p class="text-[12px]">Desenvolvido com 💙 por Fabrício Bahiense</p>
+				<p class='text-[12px]'>
+					Desenvolvido com 💙 por Fabrício Bahiense
+				</p>
 			</div>
 		</div>
 	</div>
