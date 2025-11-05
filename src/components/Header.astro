@@ -13,12 +13,15 @@ const navLinks = [
 
 <header
 	transition:persist
-	class='fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-sm'
+	class='fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-[#020211] to-[#1e144b]/10 backdrop-blur-sm'
 >
 	<nav class='container mx-auto px-5 py-3'>
-		<div class='flex items-center justify-around gap-4'>
+		<div class='flex items-center justify-between gap-4'>
 			<!-- Logo -->
-			<a href='/' class='flex items-center gap-2 group'>
+			<a
+				href='/'
+				class='flex items-center gap-2 group'
+			>
 				<Image
 					src={logo}
 					alt='Logo Tauro'
@@ -26,35 +29,42 @@ const navLinks = [
 				/>
 			</a>
 
-			<!-- Navigation -->
+			<!-- Navigation Desktop -->
 			<ul class='hidden md:flex items-center gap-6'>
-				{navLinks.map(link => (
-					<li>
-						<a
-							href={link.href}
-							class={`text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group ${
-								link.page && currentPath === link.href ? 'text-primary-cyan' : ''
-							}`}
-						>
-							{link.label}
-							<span
-								class={`absolute bottom-0 left-0 h-0.5 bg-primary-cyan transition-all duration-300 ${
-									link.page && currentPath === link.href ? 'w-full' : 'w-0 group-hover:w-full'
+				{
+					navLinks.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								class={`text-white/90 hover:text-primary-cyan transition-colors duration-300 relative group ${
+									link.page && currentPath === link.href
+										? 'text-primary-cyan'
+										: ''
 								}`}
-							></span>
-						</a>
-					</li>
-				))}
-				<!-- CTA Button -->
+							>
+								{link.label}
+								<span
+									class={`absolute bottom-0 left-0 h-0.5 bg-primary-cyan transition-all duration-300 ${
+										link.page && currentPath === link.href
+											? 'w-full'
+											: 'w-0 group-hover:w-full'
+									}`}
+								/>
+							</a>
+						</li>
+					))
+				}
 				<Button href='#contato'> Fale Conosco </Button>
 			</ul>
 
 			<!-- Mobile Menu Button -->
-			<!-- <button
-				class='md:hidden text-white'
+			<button
+				id='mobile-menu-btn'
+				class='md:hidden text-white p-2 hover:text-primary-cyan transition-colors'
 				aria-label='Menu'
 			>
 				<svg
+					id='menu-icon'
 					class='w-6 h-6'
 					fill='none'
 					stroke='currentColor'
@@ -67,7 +77,126 @@ const navLinks = [
 						d='M4 6h16M4 12h16M4 18h16'
 					></path>
 				</svg>
-			</button> -->
+				<svg
+					id='close-icon'
+					class='w-6 h-6 hidden'
+					fill='none'
+					stroke='currentColor'
+					viewBox='0 0 24 24'
+				>
+					<path
+						stroke-linecap='round'
+						stroke-linejoin='round'
+						stroke-width='2'
+						d='M6 18L18 6M6 6l12 12'
+					></path>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Mobile Menu -->
+		<div
+			id='mobile-menu'
+			class='glass-overlay md:hidden fixed inset-0 top-[72px] z-40 transform translate-x-full transition-transform duration-300 ease-in-out h-[100svh] border-t border-white/10 bg-gradient-to-b from-[#1e144b] to-[#020211]'
+		>
+			<ul
+				class='flex flex-col items-center h-full justify-center gap-8 py-12'
+			>
+				{
+					navLinks.map((link) => (
+						<li>
+							<a
+								href={link.href}
+								class={`text-2xl font-semibold text-white hover:text-primary-cyan transition-colors duration-300 ${
+									link.page && currentPath === link.href
+										? 'text-primary-cyan'
+										: ''
+								}`}
+							>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+				<li class='mt-4'>
+					<a
+						href='#contato'
+						class='inline-block px-8 py-3 rounded-full font-medium bg-gradient-to-br from-[#56C2F0] via-[#4F88D1] to-[#A056F0] text-white shadow-lg hover:scale-105 transition-transform duration-300'
+					>
+						Fale Conosco
+					</a>
+				</li>
+			</ul>
 		</div>
 	</nav>
 </header>
+
+<style>
+	.glass-overlay {
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+	}
+</style>
+
+<script>
+	const menuBtn = document.getElementById('mobile-menu-btn');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const mobileOverlay = document.getElementById('mobile-overlay');
+	const menuIcon = document.getElementById('menu-icon');
+	const closeIcon = document.getElementById('close-icon');
+
+	let isOpen = false;
+
+	menuBtn?.addEventListener('click', () => {
+		isOpen = !isOpen;
+
+		if (isOpen) {
+			mobileMenu?.classList.remove('translate-x-full');
+			mobileMenu?.classList.add('translate-x-0');
+			mobileOverlay?.classList.remove('opacity-0', 'pointer-events-none');
+			mobileOverlay?.classList.add('opacity-100');
+			menuIcon?.classList.add('hidden');
+			closeIcon?.classList.remove('hidden');
+			document.body.style.overflow = 'hidden';
+		} else {
+			mobileMenu?.classList.add('translate-x-full');
+			mobileMenu?.classList.remove('translate-x-0');
+			mobileOverlay?.classList.add('opacity-0', 'pointer-events-none');
+			mobileOverlay?.classList.remove('opacity-100');
+			menuIcon?.classList.remove('hidden');
+			closeIcon?.classList.add('hidden');
+			document.body.style.overflow = '';
+		}
+	});
+
+	// Fechar menu ao clicar no overlay
+	mobileOverlay?.addEventListener('click', () => {
+		if (isOpen) {
+			mobileMenu?.classList.add('translate-x-full');
+			mobileMenu?.classList.remove('translate-x-0');
+			mobileOverlay?.classList.add('opacity-0', 'pointer-events-none');
+			mobileOverlay?.classList.remove('opacity-100');
+			menuIcon?.classList.remove('hidden');
+			closeIcon?.classList.add('hidden');
+			document.body.style.overflow = '';
+			isOpen = false;
+		}
+	});
+
+	// Fechar menu ao clicar em um link
+	const mobileLinks = mobileMenu?.querySelectorAll('a');
+	mobileLinks?.forEach((link) => {
+		link.addEventListener('click', () => {
+			mobileMenu?.classList.add('translate-x-full');
+			mobileMenu?.classList.remove('translate-x-0');
+			mobileOverlay?.classList.add('opacity-0', 'pointer-events-none');
+			mobileOverlay?.classList.remove('opacity-100');
+			menuIcon?.classList.remove('hidden');
+			closeIcon?.classList.add('hidden');
+			document.body.style.overflow = '';
+			isOpen = false;
+		});
+	});
+</script>

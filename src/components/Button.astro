@@ -3,9 +3,10 @@ interface Props {
 	href?: string;
 	variant?: 'primary' | 'secondary';
 	class?: string;
+	id?: string;
 }
 
-const { href, variant = 'primary', class: className = '' } = Astro.props;
+const { href, variant = 'primary', class: className = '', id } = Astro.props;
 
 const baseStyles =
 	'inline-block px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-102 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-cyan/40';
@@ -23,7 +24,7 @@ const isLink = typeof href === 'string' && href.length > 0;
 		<slot />
 	</a>
 ) : (
-	<button type="submit" class={`${baseStyles} ${variants[variant]} ${className}`}>
+	<button type="submit" class={`${baseStyles} ${variants[variant]} ${className}`} id={id}>
 		<slot />
 	</button>
 )}
