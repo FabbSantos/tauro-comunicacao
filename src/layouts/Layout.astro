@@ -7,12 +7,20 @@ import logoFab from '../assets/logo_fab.svg';
 interface Props {
 	title: string;
 	description?: string;
+	image?: string;
+	type?: string;
 }
 
 const {
 	title,
 	description = 'Sua comunicação em massa, inteligente e instantânea.',
+	image = '/og-image.jpg',
+	type = 'website',
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const siteUrl = Astro.site?.toString() || 'https://taurocomunicacoes.com.br';
+const fullImageUrl = new URL(image, siteUrl).toString();
 ---
 
 <!doctype html>
@@ -20,23 +28,76 @@ const {
 	<head>
 		<meta charset='UTF-8' />
 		<meta
-			name='description'
-			content={description}
-		/>
-		<meta
 			name='viewport'
 			content='width=device-width, initial-scale=1.0'
 		/>
+		<meta
+			name='description'
+			content={description}
+		/>
+
+		<!-- Canonical URL -->
+		<link rel='canonical' href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property='og:type' content={type} />
+		<meta property='og:url' content={canonicalURL} />
+		<meta property='og:title' content={title} />
+		<meta property='og:description' content={description} />
+		<meta property='og:image' content={fullImageUrl} />
+		<meta property='og:locale' content='pt_BR' />
+		<meta property='og:site_name' content='Tauro Comunicações' />
+
+		<!-- Twitter Card -->
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:url' content={canonicalURL} />
+		<meta name='twitter:title' content={title} />
+		<meta name='twitter:description' content={description} />
+		<meta name='twitter:image' content={fullImageUrl} />
+
+		<!-- Additional SEO Meta Tags -->
+		<meta name='robots' content='index, follow' />
+		<meta name='language' content='Portuguese' />
+		<meta name='author' content='Tauro Comunicações' />
+		<meta name='theme-color' content='#020211' />
+
+		<!-- Favicon -->
 		<link
 			rel='icon'
 			type='image/svg+xml'
 			href='/favicon.svg'
 		/>
+
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
 		<meta
 			name='generator'
 			content={Astro.generator}
 		/>
 		<title>{title}</title>
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Organization",
+				"name": "Tauro Comunicações",
+				"url": "https://taurocomunicacoes.com.br",
+				"logo": "https://taurocomunicacoes.com.br/logo.png",
+				"description": "Soluções inteligentes de comunicação em massa via WhatsApp e SMS",
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"telephone": "+55-11-97103-4446",
+					"contactType": "customer service",
+					"availableLanguage": ["Portuguese"]
+				},
+				"sameAs": []
+			}
+		</script>
+
 		<ViewTransitions />
 	</head>
 	<body class='min-h-screen text-white'>

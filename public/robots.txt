@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://taurocomunicacoes.com.br/sitemap.xml

@@ -1,0 +1,204 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+	title='Sobre Nós - Tauro Comunicações'
+	description='Conheça a Tauro Comunicações, especialista em soluções de comunicação em massa via WhatsApp e SMS.'
+>
+	<Header />
+	<main class='pt-32 bg-gradient-to-bl from-[#020211] to-[#1e144b]'>
+		<section class='container mx-auto px-6 pb-20'>
+			<!-- Hero Section -->
+			<div
+				class='max-w-4xl mx-auto space-y-8 text-center mb-20'
+			>
+				<h1 class='text-5xl md:text-6xl font-bold leading-tight'>
+					Sobre <span class='text-primary-cyan'>Nós</span>
+				</h1>
+				<p class='text-white/70 text-lg leading-relaxed'>
+					Transformamos a forma como empresas se comunicam com seus
+					clientes através de soluções inteligentes e eficientes.
+				</p>
+			</div>
+
+			<!-- Nossa História -->
+			<div class='max-w-4xl mx-auto mb-20'>
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10'
+				>
+					<h2 class='text-3xl font-bold mb-6 text-primary-cyan'>
+						Nossa História
+					</h2>
+					<div class='space-y-4 text-white/70 leading-relaxed'>
+						<p>
+							A Tauro Comunicações nasceu da necessidade de
+							conectar empresas aos seus clientes de forma mais
+							direta, eficiente e humanizada. Em um mundo cada vez
+							mais digital, entendemos que a comunicação precisa
+							ser rápida, mas também precisa ser relevante.
+						</p>
+						<p>
+							Especializados em soluções de comunicação em massa
+							via WhatsApp e SMS, desenvolvemos plataformas que
+							permitem às empresas alcançarem seus públicos de
+							maneira segmentada, personalizada e com altas taxas
+							de conversão.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Missão, Visão e Valores -->
+			<div class='grid md:grid-cols-3 gap-8 mb-20'>
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center'
+				>
+					<div
+						class='w-16 h-16 bg-gradient-to-br from-primary-cyan to-primary-blue rounded-full flex items-center justify-center mx-auto mb-6'
+					>
+						<svg
+							class='w-8 h-8 text-white'
+							fill='none'
+							stroke='currentColor'
+							viewBox='0 0 24 24'
+						>
+							<path
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								stroke-width='2'
+								d='M13 10V3L4 14h7v7l9-11h-7z'></path>
+						</svg>
+					</div>
+					<h3 class='text-2xl font-bold mb-4'>Missão</h3>
+					<p class='text-white/70 leading-relaxed'>
+						Facilitar a comunicação entre empresas e clientes
+						através de tecnologia acessível e eficiente.
+					</p>
+				</div>
+
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center'
+				>
+					<div
+						class='w-16 h-16 bg-gradient-to-br from-primary-blue to-primary-purple rounded-full flex items-center justify-center mx-auto mb-6'
+					>
+						<svg
+							class='w-8 h-8 text-white'
+							fill='none'
+							stroke='currentColor'
+							viewBox='0 0 24 24'
+						>
+							<path
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								stroke-width='2'
+								d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'></path>
+							<path
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								stroke-width='2'
+								d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'
+							></path>
+						</svg>
+					</div>
+					<h3 class='text-2xl font-bold mb-4'>Visão</h3>
+					<p class='text-white/70 leading-relaxed'>
+						Ser referência em comunicação digital, reconhecida pela
+						inovação e resultados entregues.
+					</p>
+				</div>
+
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 border border-white/10 text-center'
+				>
+					<div
+						class='w-16 h-16 bg-gradient-to-br from-primary-purple to-primary-cyan rounded-full flex items-center justify-center mx-auto mb-6'
+					>
+						<svg
+							class='w-8 h-8 text-white'
+							fill='none'
+							stroke='currentColor'
+							viewBox='0 0 24 24'
+						>
+							<path
+								stroke-linecap='round'
+								stroke-linejoin='round'
+								stroke-width='2'
+								d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+							></path>
+						</svg>
+					</div>
+					<h3 class='text-2xl font-bold mb-4'>Valores</h3>
+					<p class='text-white/70 leading-relaxed'>
+						Transparência, inovação, foco no cliente e excelência
+						na entrega.
+					</p>
+				</div>
+			</div>
+
+			<!-- Nossos Diferenciais -->
+			<div class='max-w-4xl mx-auto'>
+				<h2
+					class='text-3xl md:text-4xl font-bold mb-12 text-center'
+				>
+					Por que escolher a <span class='text-primary-cyan'
+						>Tauro</span
+					>?
+				</h2>
+				<div class='grid md:grid-cols-2 gap-6'>
+					<div
+						class='bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10'
+					>
+						<h4 class='text-xl font-semibold mb-3 text-primary-cyan'>
+							Tecnologia Avançada
+						</h4>
+						<p class='text-white/70 leading-relaxed'>
+							Plataformas robustas e intuitivas que facilitam o
+							envio e gerenciamento de campanhas.
+						</p>
+					</div>
+
+					<div
+						class='bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10'
+					>
+						<h4 class='text-xl font-semibold mb-3 text-primary-cyan'>
+							Suporte Especializado
+						</h4>
+						<p class='text-white/70 leading-relaxed'>
+							Equipe dedicada para auxiliar você em cada etapa da
+							sua estratégia de comunicação.
+						</p>
+					</div>
+
+					<div
+						class='bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10'
+					>
+						<h4 class='text-xl font-semibold mb-3 text-primary-cyan'>
+							Resultados Comprovados
+						</h4>
+						<p class='text-white/70 leading-relaxed'>
+							Altas taxas de entrega e conversão que impactam
+							diretamente no seu ROI.
+						</p>
+					</div>
+
+					<div
+						class='bg-black/40 backdrop-blur-sm rounded-xl p-6 border border-white/10'
+					>
+						<h4 class='text-xl font-semibold mb-3 text-primary-cyan'>
+							Segurança e Conformidade
+						</h4>
+						<p class='text-white/70 leading-relaxed'>
+							Seguimos rigorosamente as normas de proteção de
+							dados e boas práticas de mercado.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>

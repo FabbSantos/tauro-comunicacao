@@ -1,0 +1,260 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const currentDate = new Date().toLocaleDateString('pt-BR', {
+	day: '2-digit',
+	month: 'long',
+	year: 'numeric',
+});
+---
+
+<Layout
+	title='Termos de Uso - Tauro Comunicações'
+	description='Termos de Uso e Política de Privacidade da Tauro Comunicações. Conheça nossas diretrizes e compromissos.'
+>
+	<Header />
+	<main class='pt-32 bg-gradient-to-bl from-[#020211] to-[#1e144b]'>
+		<section class='container mx-auto px-6 pb-20'>
+			<!-- Hero Section -->
+			<div
+				class='max-w-4xl mx-auto space-y-8 text-center mb-16'
+			>
+				<h1 class='text-5xl md:text-6xl font-bold leading-tight'>
+					Termos de <span class='text-primary-cyan'>Uso</span>
+				</h1>
+				<p class='text-white/70 text-lg leading-relaxed'>
+					Última atualização: {currentDate}
+				</p>
+			</div>
+
+			<!-- Conteúdo dos Termos -->
+			<div class='max-w-4xl mx-auto space-y-8'>
+				<!-- Seção 1 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						1. Aceitação dos Termos
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							Ao acessar e utilizar os serviços da Tauro
+							Comunicações, você concorda com estes Termos de Uso
+							e nossa Política de Privacidade. Se você não
+							concorda com qualquer parte destes termos, não deve
+							utilizar nossos serviços.
+						</p>
+					</div>
+				</div>
+
+				<!-- Seção 2 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						2. Descrição dos Serviços
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							A Tauro Comunicações oferece plataformas de
+							comunicação em massa através de WhatsApp e SMS,
+							permitindo que empresas enviem mensagens
+							segmentadas, personalizadas e automatizadas para
+							seus clientes.
+						</p>
+						<p>
+							Nossos serviços incluem, mas não se limitam a:
+						</p>
+						<ul class='list-disc list-inside space-y-2 ml-4'>
+							<li>Envio de mensagens em massa via WhatsApp</li>
+							<li>Envio de SMS Marketing</li>
+							<li>
+								Automação de campanhas e fluxos de comunicação
+							</li>
+							<li>
+								Segmentação e personalização de mensagens
+							</li>
+							<li>Relatórios e análises de desempenho</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Seção 3 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						3. Responsabilidades do Usuário
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>Ao utilizar nossos serviços, você se compromete a:</p>
+						<ul class='list-disc list-inside space-y-2 ml-4'>
+							<li>
+								Utilizar os serviços de acordo com a legislação
+								vigente
+							</li>
+							<li>
+								Não enviar spam ou conteúdo não solicitado
+							</li>
+							<li>
+								Respeitar os direitos de privacidade dos
+								destinatários
+							</li>
+							<li>
+								Obter consentimento prévio dos destinatários
+								quando necessário
+							</li>
+							<li>
+								Não utilizar os serviços para fins ilícitos ou
+								antiéticos
+							</li>
+							<li>
+								Manter a confidencialidade de suas credenciais
+								de acesso
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Seção 4 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						4. Proteção de Dados e Privacidade
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							A Tauro Comunicações está comprometida com a
+							proteção dos dados pessoais e segue rigorosamente a
+							Lei Geral de Proteção de Dados (LGPD).
+						</p>
+						<p>
+							Coletamos e processamos dados apenas para a
+							prestação dos serviços contratados e mediante
+							consentimento explícito. Os dados são armazenados de
+							forma segura e não são compartilhados com terceiros
+							sem autorização.
+						</p>
+					</div>
+				</div>
+
+				<!-- Seção 5 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						5. Limitação de Responsabilidade
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							A Tauro Comunicações não se responsabiliza por:
+						</p>
+						<ul class='list-disc list-inside space-y-2 ml-4'>
+							<li>
+								Conteúdo das mensagens enviadas pelos usuários
+							</li>
+							<li>
+								Falhas de entrega causadas por operadoras ou
+								plataformas de terceiros
+							</li>
+							<li>
+								Uso indevido dos serviços por parte dos usuários
+							</li>
+							<li>
+								Danos indiretos ou consequenciais resultantes do
+								uso dos serviços
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Seção 6 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						6. Suspensão e Cancelamento
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							Reservamo-nos o direito de suspender ou cancelar o
+							acesso aos nossos serviços em caso de violação
+							destes Termos de Uso ou utilização inadequada da
+							plataforma.
+						</p>
+						<p>
+							O usuário pode cancelar sua conta a qualquer momento
+							mediante solicitação formal.
+						</p>
+					</div>
+				</div>
+
+				<!-- Seção 7 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						7. Modificações nos Termos
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							Estes Termos de Uso podem ser atualizados
+							periodicamente. Notificaremos os usuários sobre
+							mudanças significativas por e-mail ou através da
+							plataforma.
+						</p>
+						<p>
+							O uso continuado dos serviços após as modificações
+							constitui aceitação dos novos termos.
+						</p>
+					</div>
+				</div>
+
+				<!-- Seção 8 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						8. Contato
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							Para dúvidas ou questões relacionadas a estes Termos
+							de Uso, entre em contato conosco:
+						</p>
+						<ul class='space-y-2'>
+							<li>
+								<strong class='text-white'>WhatsApp:</strong> (11)
+								97103-4446
+							</li>
+							<li>
+								<strong class='text-white'>E-mail:</strong> contato@taurocomunicacoes.com.br
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Seção 9 -->
+				<div
+					class='bg-black/40 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/10'
+				>
+					<h2 class='text-2xl font-bold mb-4 text-primary-cyan'>
+						9. Lei Aplicável
+					</h2>
+					<div class='space-y-3 text-white/70 leading-relaxed'>
+						<p>
+							Estes Termos de Uso são regidos pelas leis da
+							República Federativa do Brasil. Qualquer disputa
+							relacionada a estes termos será submetida à
+							jurisdição exclusiva dos tribunais brasileiros.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
