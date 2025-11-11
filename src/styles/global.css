@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-* { 
+html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
     font-family: inherit;
     scroll-behavior: smooth;
     scroll-margin: 350px;
